@@ -11,3 +11,4 @@ def html_response(request):
  html = "<h1>Welcome to My Django Site</h1><p>This is HTML content.</p>"
  return HttpResponse(html, content_type="text/html")
 
+print("hello")
