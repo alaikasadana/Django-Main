@@ -1,0 +1,22 @@
+2 cd .\env\
+3 cd .\Scripts\
+4 ./activate
+5 cd ../../
+6 cd .\project\
+7 python manage.py runserver
+8 python manage.py
+9 py manage.py createsuperuser
+10 py manage.py migrate
+11 py manage.py createsuperuser
+12 py manage.py createsuperuser
+13 py manage.py runserver
+
+
+====================================================================================================================
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    # path('landingpage/',views.landingpage,name='landingpage') ,             here youn can run without / and can run directly by name also
+    # path('landingpage',views.landingpage,name='landingpage') ,              you cannot use / in last
+    # path('',views.landingpage,name='landingpage')               #bydefault page set krna
+]

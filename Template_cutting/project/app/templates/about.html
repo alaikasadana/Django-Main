@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/about.css'%}">
+ {% endblock css %}
+
+
+
+{% block title %}
+<title>About</title>
+{% endblock title %}
+
+
+{% block content %}
+<section id="about" class="about">
+  <div class="about-container">
+    
+    <div class="about-text">
+      <h2>About Me</h2>
+      <h3>Student • Learner • Creator</h3>
+      <p>
+        Hi, I’m [Your Name], a dedicated student who loves technology, creativity, and learning new things.
+        I enjoy building projects, exploring ideas, and improving a little every single day.
+      </p>
+      <p>
+        This website is my space to share what I’m working on, what I’m learning, and the things that inspire me.
+        I believe in consistency, growth, and creating work that truly adds value.
+      </p>
+      <ul class="about-highlights">
+        <li>Currently studying: [Your Course, e.g., BCA]</li>
+        <li>Interested in: Web Development, Design, and Problem Solving</li>
+        <li>Goals: To build meaningful digital experiences</li>
+      </ul>
+      <a href="#projects" class="btn-primary">View My Projects</a>
+    </div>
+
+    <div class="about-image">
+      <img src="{%static 'image/coast.jpg'%}" alt="Photo of [Your Name]" />
+    </div>
+
+  </div>
+</section>
+
+{% endblock content%}

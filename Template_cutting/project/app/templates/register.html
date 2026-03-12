@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+<title>Register</title>
+{% endblock title %}
+
+{% block css %}   
+<link rel="stylesheet" href="{% static 'css/register.css'%}">
+ {% endblock css %}
+
+{% block content %}
+
+  <section class="register-section">
+  <div class="register-card">
+    <h2>Create Account</h2>
+
+    <form>
+
+      <input type="text" placeholder="Full Name" required>
+      <input type="email" placeholder="Email Address" required>
+      <input type="tel" placeholder="Phone Number" required>
+      <input type="password" placeholder="Password" required>
+      <input type="password" placeholder="Confirm Password" required>
+
+      <textarea rows="3" placeholder="Short Bio"></textarea>
+
+      <label class="terms">
+        <input type="checkbox" required> I agree to terms
+      </label>
+
+      <button type="submit" class="btn-register">Register</button>
+
+      <p class="login-link">Already registered? <a href="#">Login</a></p>
+    </form>
+  </div>
+</section>
+
+{% endblock content %}
+
+{% block js %}
+
+{% endblock js %}
+
+
+

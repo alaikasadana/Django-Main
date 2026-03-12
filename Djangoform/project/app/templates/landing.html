@@ -1,0 +1,137 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome | Your Project</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #4f46e5, #7c3aed);
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 60px;
+        }
+
+        .navbar h2 {
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .nav-btn {
+            background: #fff;
+            color: #4f46e5;
+            padding: 10px 20px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s ease;
+        }
+
+        .nav-btn:hover {
+            background: #ddd;
+        }
+
+        /* Hero Section */
+        .hero {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 700px;
+        }
+
+        .hero-content h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .hero-content p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .register-btn {
+            background: #fff;
+            color: #4f46e5;
+            padding: 14px 35px;
+            border-radius: 40px;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 600;
+            transition: 0.3s ease;
+        }
+
+        .register-btn:hover {
+            background: #f1f1f1;
+            transform: translateY(-3px);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.1);
+        }
+
+        @media(max-width:768px){
+            .hero-content h1 {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <h2>YourProject</h2>
+        <a href="{% url 'register' %}" class="nav-btn">Register</a>
+    </div>
+           
+    <!-- Hero Section -->
+    <div class="hero">
+        <div class="hero-content">
+            <h1>Build Something Amazing With Us</h1>
+            <p>
+                Join our platform and start your journey today.
+                Fast. Secure. Simple.
+            </p>
+            <a href="{% url 'register' %}" class="register-btn">Get Started</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        © 2026 YourProject | All Rights Reserved
+    </footer>
+
+</body>
+</html>

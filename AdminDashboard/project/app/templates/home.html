@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Home{% endblock %}
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="page-section">
+    <h1>Welcome to Our Website</h1>
+    <p>
+        We build modern, scalable, and user-friendly web applications.
+        Our goal is to deliver clean design and powerful functionality.
+    </p>
+
+    <div class="card-grid">
+        <div class="card">
+            <h3>Quality Code</h3>
+            <p>Clean, maintainable, and scalable development.</p>
+        </div>
+
+        <div class="card">
+            <h3>Modern Design</h3>
+            <p>Minimal, responsive, and professional UI.</p>
+        </div>
+
+        <div class="card">
+            <h3>Reliable Support</h3>
+            <p>Continuous improvement and long-term support.</p>
+        </div>
+    </div>
+</section>
+{% endblock %}
+

@@ -1,0 +1,68 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign Up</title>
+
+  <!-- CSS File -->
+  <link rel="stylesheet" href="{% static 'css/signup.css' %}">
+</head>
+
+<body>
+
+  <div class="signup-wrapper">
+
+    <!-- LEFT SIDE (Brand Section) -->
+    <div class="signup-left">
+      <h1>Join Us ✨</h1>
+      <p>
+        Create your account and send your query easily.  
+        We’ll connect with you soon 💌
+      </p>
+    </div>
+
+    <!-- RIGHT SIDE (Form Section) -->
+    <div class="signup-right">
+      <h2>Create Account</h2>
+      <p class="sub-text">Fill your details carefully</p>
+
+      <form method="POST" action="djangomail">
+        {% csrf_token %}
+
+        <div class="input-box">
+          <label>Name</label>
+          <input type="text" name="name" placeholder="Enter your name" required>
+        </div>
+
+        <div class="input-box">
+          <label>Email</label>
+          <input type="email" name="email" placeholder="Enter your email" required>
+        </div>
+
+        <div class="input-box">
+          <label>Contact</label>
+          <input type="text" name="contact" placeholder="Enter your contact number" required>
+        </div>
+
+        <div class="input-box">
+          <label>Your Query</label>
+          <textarea name="query" rows="4" placeholder="Write your query here..." required></textarea>
+        </div>
+
+        <button type="submit" class="btn-submit">Sign Up</button>
+
+        <!-- OPTIONAL MESSAGE DISPLAY -->
+        {% if messages %}
+          {% for msg in messages %}
+            <p class="msg {{ msg.tags }}">{{ msg }}</p>
+          {% endfor %}
+        {% endif %}
+      </form>
+    </div>
+
+  </div>
+
+</body>
+</html>

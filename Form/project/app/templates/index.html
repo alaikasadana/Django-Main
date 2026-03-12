@@ -1,0 +1,132 @@
+{% extends "base.html" %}
+
+{% block title %}
+index.html
+{% endblock title %}
+
+{% block content %}
+{% comment %} <h4> this is Form page </h1>
+
+    <h2>Registration Form</h2>
+
+    <form action="{% url 'formdata' %}" enctype="multipart/form-data" method="post">
+        {% csrf_token %}
+
+
+        <label>Full Name:</label><br>
+        <input type="text" name="fullname"><br><br>
+
+
+        <label>Email:</label><br>
+        <input type="email" name="email"><br><br>
+
+
+        <label>Password:</label><br>
+        <input type="password" name="password"><br><br>
+
+
+        <label>Gender:</label><br>
+        <input type="radio" name="gender"> Male
+        <input type="radio" name="gender"> Female
+        <input type="radio" name="gender"> Other
+        <br><br>
+
+
+        <label>Upload File:</label><br>
+        <input type="file" name="file_upload"><br><br>
+
+
+        <input type="submit" value="Register">
+        <input type="reset" value="Clear">
+
+    </form> {% endcomment %}
+
+
+
+    <h2> Registration Form </h2>
+
+    <form action="{% url 'formdata' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        
+        <label> Name </label>
+        <br>
+        <input type="text" name="name" required><br><br>
+
+       
+        <label> Email </label>
+        <br>
+        <input type="email" name="email"><br><br>
+
+       
+        <label> Contact </label>
+        <br>
+        <input type="tel" name="tell" required><br><br>
+
+        
+        <label> Contact 2 </label>
+        <br>
+        <input type="number" name="tell2" required><br><br>
+
+        
+        <label> Qualification </label><br>
+        <input type="checkbox" name="quali" value="10"> 10th <br>
+        <input type="checkbox" name="quali" value="12"> 12th <br>
+        <input type="checkbox" name="quali" value="ug"> UG <br>
+        <input type="checkbox" name="quali" value="pg"> PG <br>
+        <input type="checkbox" name="quali" value="phd"> PhD <br><br>
+
+        
+        <label> State </label>
+        <br>
+        <select name="state">
+            <option value=""> --Select State-- </option>
+            <option value="MP"> Madhya Pradesh </option>
+            <option value="UP"> Uttar Pradesh </option>
+            <option value="Chhattisgarh"> Chhattisgarh </option>
+            <option value="Chhattisgarh"> Gujrat </option>
+            <option value="Chhattisgarh"> Odisha </option>
+            <option value="Chhattisgarh"> Bihar </option>
+        </select>
+        
+        <br>
+        <br>
+
+        
+        <label> Gender </label>
+        <br>
+        <input type="radio" name="gender" value="male"> Male
+        <input type="radio" name="gender" value="female"> Female
+        <input type="radio" name="gender" value="other"> Other
+
+        <br>
+        <br>
+
+        
+        <label> Photo </label>
+        <br>
+        <input type="file" name="image" accept=".jpg,.png"><br><br>
+
+        
+        <label> Document </label>
+        <br>
+        <input type="file" name="document" accept=".pdf,.doc,.csv"><br><br>
+
+       
+        <label> Audio </label>
+        <br>
+        <input type="file" name="audio" accept=".mp3"><br><br>
+
+       
+        <label> Video </label>
+        <br>
+        <input type="file" name="video" accept=".mp4">
+        
+        <br>
+        <br>
+
+        <input type="submit" value="submit"> 
+
+
+    </form>
+
+    {% endblock content %}

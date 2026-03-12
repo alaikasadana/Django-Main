@@ -1,0 +1,3 @@
+pip freeze (to check packages)
+pip freeze  > requirements.txt  (to send data to this text file)
+pip freeze  >> requirements.txt  (appends the data)

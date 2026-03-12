@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Services{% endblock %}
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% endblock %}
+
+
+{% block content %}
+<section class="page-section">
+    <h1>Our Services</h1>
+    <p>
+        We offer a complete range of web and software development services.
+    </p>
+
+    <div class="card-grid">
+        <div class="card">
+            <h3>Web Development</h3>
+            <p>
+                Full-stack development using modern frameworks and tools.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>UI / UX Design</h3>
+            <p>
+                Clean, user-focused, and responsive designs.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Backend & APIs</h3>
+            <p>
+                Secure, scalable backend systems and APIs.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Maintenance</h3>
+            <p>
+                Continuous updates, optimization, and support.
+            </p>
+        </div>
+    </div>
+</section>
+{% endblock %}

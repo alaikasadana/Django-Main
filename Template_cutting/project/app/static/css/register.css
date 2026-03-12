@@ -1,0 +1,95 @@
+/* Do NOT touch body or html — Bootstrap controls those */
+    body {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+.register-section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  /* padding: 100px 15px;  creates space below navbar */
+  min-height: calc(100vh - 160px); /* keeps footer visible */
+  background: #f8f9fa; /* light Bootstrap-like background */
+}
+
+.register-card {
+  width: 100%;
+  max-width: 450px;
+  background: #ffffff;
+  padding: 30px 25px;
+  border-radius: 12px;
+  box-shadow: 0 6px 22px rgba(0,0,0,0.18);
+  margin-bottom: 40px; /* space from footer when scrolling */
+}
+
+.register-card h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #212529;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+input,
+select,
+textarea {
+  padding: 10px;
+  border-radius: 7px;
+  border: 1px solid #ced4da;
+  font-size: 14px;
+  background: #fff;
+  outline: none;
+  transition: 0.15s;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #0d6efd;
+  box-shadow: 0 0 0 2px rgba(13,110,253,0.2);
+}
+
+textarea {
+  resize: vertical;
+}
+
+.terms {
+  font-size: 13px;
+  color: #495057;
+  margin-top: 4px;
+}
+
+.btn-register {
+  background: #0d6efd;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 7px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btn-register:hover {
+  background: #0b5ed7;
+}
+
+.login-link {
+  text-align: center;
+  font-size: 13px;
+  margin-top: 10px;
+}
+
+.login-link a {
+  color: #0d6efd;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.login-link a:hover {
+  text-decoration: underline;
+}

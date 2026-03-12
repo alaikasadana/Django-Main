@@ -1,0 +1,101 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="{% static 'css/admin.css' %}">
+</head>
+<body>
+
+<div class="dashboard">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <h2>Admin Panel</h2>
+
+        <a href="?page=add_department">➕ Add Department</a>
+        <a href="?page=add_employee">➕ Add Employee</a>
+        <a href="?page=show_department">📋 Show Departments</a>
+        <a href="?page=show_employee">👥 Show Employees</a>
+        <a href="?page=show_queries">❓ Show Queries</a>
+{% comment %} 
+        <a class="logout" href="{% url 'logout' %}">🚪 Logout</a> {% endcomment %}
+    </aside>
+
+    <!-- CONTENT -->
+    <main class="content">
+
+        {% if page == 'home' %}
+            <h1>Welcome Admin</h1>
+            <p>Select an option from the left menu.</p>
+
+        {% elif page == 'add_department' %}
+            <h1>Add Department</h1>
+            <form method="POST">
+                {% csrf_token %}
+                <input type="text" name="department" placeholder="Department Name" required>
+                <button>Add</button>
+            </form>
+
+        {% elif page == 'add_employee' %}
+            <h1>Add Employee</h1>
+            <form method="POST">
+                {% csrf_token %}
+                <input type="text" name="name" placeholder="Name" required>
+                <input type="email" name="email" placeholder="Email" required>
+
+                <select name="department">
+                    {% for d in departments %}
+                        <option value="{{ d.id }}">{{ d.name }}</option>
+                    {% endfor %}
+                </select>
+
+                <button>Add</button>
+            </form>
+
+        {% elif page == 'show_department' %}
+            <h1>Departments</h1>
+            <table>
+                <tr><th>ID</th><th>Name</th></tr>
+                {% for d in departments %}
+                <tr>
+                    <td>{{ d.id }}</td>
+                    <td>{{ d.name }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+
+        {% elif page == 'show_employee' %}
+            <h1>Employees</h1>
+            <table>
+                <tr><th>ID</th><th>Name</th><th>Email</th><th>Department</th></tr>
+                {% for e in employees %}
+                <tr>
+                    <td>{{ e.id }}</td>
+                    <td>{{ e.name }}</td>
+                    <td>{{ e.email }}</td>
+                    <td>{{ e.department.name }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+
+        {% elif page == 'show_queries' %}
+            <h1>User Queries</h1>
+            <table>
+                <tr><th>Name</th><th>Email</th><th>Message</th></tr>
+                {% for q in queries %}
+                <tr>
+                    <td>{{ q.name }}</td>
+                    <td>{{ q.email }}</td>
+                    <td>{{ q.message }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        {% endif %}
+
+    </main>
+
+</div>
+</body>
+</html> 
